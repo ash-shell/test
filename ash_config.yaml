@@ -1,0 +1,4 @@
+name: test
+package: github.com/ash-shell/test
+default_alias: test
+callable_prefix: Test
