@@ -42,7 +42,7 @@ Now that we're ready to start writing tests, we'll have to create the `test.sh` 
 
 In the `test.sh` file, you can create functions that start with `"$test_prefix"__test_`, and those will get run when we run our tests.
 
-Following our previous example, if our module was named `Slugify`, the functions that we would want to test would have to start with `Slugify__test_"
+Following our previous example, if our module was named `Slugify`, the functions that we would want to test would have to start with `Slugify__test_"`
 
 When writing these functions, if at any point there is a failure you should return 1.  When everything succeeds don't return anything.
 
@@ -68,7 +68,7 @@ Before jumping into this section, I will provide a screenshot that displays what
 
 ![Imgur](http://i.imgur.com/6d5HlX8.png)
 
-> All that fancy indentation is handled for you
+> All that fancy indentation is handled for you :tada:
 
 ### Provide Concise Names for Tests
 
@@ -93,7 +93,7 @@ Slugify__test_slugify_spaces(){
     local result="$(Slugify__slugify "Radical    Ricky")"
     if [[ "$result" != "radical-ricky" ]]; then
         # This line below is our failure description
-        echo "Slugify__slugify should convert 'Radical    Ricky' into 'radical-ricky'
+        echo "Slugify__slugify should convert 'Radical    Ricky' into 'radical-ricky'"
         return 1
     fi
 }
@@ -110,7 +110,7 @@ Slugify__test_slugify_spaces(){
     local result="$(Slugify__slugify "Radical    Ricky")"
     if [[ "$result" != "radical-ricky" ]]; then
         # This line below is our failure description
-        echo "Slugify__slugify should convert 'Radical    Ricky' into 'radical-ricky'
+        echo "Slugify__slugify should convert 'Radical    Ricky' into 'radical-ricky'"
         # This lines below are our failure details.  We can have as many (or as little) of these as we want
         echo "Actual Result: '$result'"
         echo "Wow, another detail!"
