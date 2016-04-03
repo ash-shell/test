@@ -2,7 +2,27 @@
 
 Test is an [Ash](https://github.com/ash-shell/ash) module that offers easy unit testing, with simple CI integrations.
 
-## Getting Started
+## Running Tests
+
+You can run tests by running the following command:
+
+```sh
+ash test $module-to-test
+```
+
+Where `$module-to-test` is either a module alias, or a module package.
+
+## Hooking Up a Module to Travis
+
+You can generate the `.travis.yml` file by running the following command while in your modules directory:
+
+```
+ash test:travis
+```
+
+If your tests are already written, there is no further configuration you need to do beyond enabling your repository on Travis.
+
+## Writing Tests
 
 ### The `ash_config.yaml` File
 
