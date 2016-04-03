@@ -1,6 +1,6 @@
-# Ash Test
+# Test
 
-Test is an [Ash]() module that offers easy unit testing, with simple CI integrations.
+Test is an [Ash](https://github.com/ash-shell/ash) module that offers easy unit testing, with simple CI integrations.
 
 ## Getting Started
 
@@ -48,6 +48,8 @@ Before jumping into this section, I will provide a screenshot that displays what
 
 ![Imgur](http://i.imgur.com/6d5HlX8.png)
 
+> All that fancy indentation is handled for you
+
 ### Provide Concise Names for Tests
 
 The name of your actual test method has to start with `"$test_prefix"__test_` by requirement, but anything after that is up for you to decide.
@@ -89,7 +91,9 @@ Slugify__test_slugify_spaces(){
     if [[ "$result" != "radical-ricky" ]]; then
         # This line below is our failure description
         echo "Slugify__slugify should convert 'Radical    Ricky' into 'radical-ricky'
+        # This lines below are our failure details.  We can have as many (or as little) of these as we want
         echo "Actual Result: '$result'"
+        echo "Wow, another detail!"
         return 1
     fi
 }
