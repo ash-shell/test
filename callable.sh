@@ -87,3 +87,26 @@ Test__callable_main() {
         return 1
     fi
 }
+
+##################################################
+# This function will download the most recent
+# travis.yml file and set it in the current module.
+#
+# Fetches the most recent travis.yml file from:
+# https://github.com/ash-shell/travis-buildpack
+##################################################
+Test__callable_travis() {
+    file_location=$Ash__CALL_DIRECTORY/travis.yml
+    if [[ ! -f "$file_location" ]]; then
+        Logger__alert "Downloading most recent Buildpack..."
+        curl https://raw.githubusercontent.com/ash-shell/travis-buildpack/master/travis.yml > "$file_location"
+        if [[ $? -eq 0 ]]; then
+            Logger__success "travis.yml file is set up in the current directory!"
+        else
+            Logger__error "Failed to download the most recent Buildpack... Check your network and try again."
+            rm "$file_location"
+        fi
+    else
+        Logger__error "There is already a travis.yml file located in the current directory"
+    fi
+}
